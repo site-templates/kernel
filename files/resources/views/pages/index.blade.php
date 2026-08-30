@@ -1,4 +1,4 @@
-<x-layouts.main title="Home" description="Wren Halliday is a designer and engineer in Bristol building small tools, and writing down what building them taught him." current="/">
+<x-layouts.main title="Home" description="Theo Marsh is a designer and engineer in Bristol building small tools, and writing down what building them taught him." current="/">
     <x-sections.intro />
     <x-sections.writing-list heading="Writing" viewAllText="Everything I have written" viewAllHref="/writing" />
     <x-sections.project-list heading="Projects" viewAllText="All five projects" viewAllHref="/projects" />

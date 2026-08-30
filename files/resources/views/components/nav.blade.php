@@ -2,7 +2,7 @@
     'links' => [],
     'current' => '/',
     'avatar' => '/images/avatar.jpg',
-    'avatarAlt' => 'Wren Halliday',
+    'avatarAlt' => 'Theo Marsh',
 ])
 {{-- The header is one row of type on bare paper: the avatar, which is this
      site's only mark, and the four places you can go. No bar, no border, no

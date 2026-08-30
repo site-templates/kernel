@@ -12,7 +12,7 @@ fields:
     avatarAlt:
         type: text
         label: Avatar alt text
-        default: "Wren Halliday"
+        default: "Theo Marsh"
     current:
         type: text
         label: Current page path

@@ -1,5 +1,5 @@
 {
-    "name": "Wren Halliday",
+    "name": "Theo Marsh",
     "nav_links": [
         { "text": "Writing", "url": "/writing" },
         { "text": "Projects", "url": "/projects" },
@@ -7,7 +7,7 @@
         { "text": "Now", "url": "/now" }
     ],
     "elsewhere_links": [
-        { "text": "Email", "url": "mailto:hello@wrenhalliday.com" },
+        { "text": "Email", "url": "mailto:hello@theomarsh.com" },
         { "text": "GitHub", "url": "https://github.com" },
         { "text": "Bluesky", "url": "https://bsky.app" },
         { "text": "Read.cv", "url": "https://read.cv" },

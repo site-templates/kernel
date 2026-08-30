@@ -1,7 +1,7 @@
 @props([
     'links' => [],
     'note' => 'Set in Spectral and Schibsted Grotesk.',
-    'copyright' => '© 2026 Wren Halliday',
+    'copyright' => '© 2026 Theo Marsh',
 ])
 {{-- The close: a hairline on the column's own edge — the same register as
      every other rule on the site — then the four links and a line about how

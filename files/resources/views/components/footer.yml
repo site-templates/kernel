@@ -11,7 +11,7 @@ fields:
     copyright:
         type: text
         label: Copyright
-        default: "© 2026 Wren Halliday"
+        default: "© 2026 Theo Marsh"
     links:
         type: repeater
         label: Footer links
