@@ -3,13 +3,13 @@
     'note' => 'Set in Spectral and Schibsted Grotesk.',
     'copyright' => '© 2026 Wren Halliday',
 ])
-{{-- The close: a full-bleed hairline that breaks the column and runs the
-     whole width of the page, then the same four links and a line about how
-     the site is made. The rule is the only element in the design allowed
-     outside the column, which is what makes the ending feel like an ending. --}}
+{{-- The close: a hairline on the column's own edge — the same register as
+     every other rule on the site — then the four links and a line about how
+     the page is made. It ends where everything else ends, which is the
+     whole argument of the layout. --}}
 <footer class="mt-10 sm:mt-14">
 
-    <div class="-mx-6 border-t border-line sm:-mx-8"></div>
+    <div class="border-t border-line"></div>
 
     <div class="flex flex-col gap-6 py-10 sm:flex-row sm:items-baseline sm:justify-between">
 

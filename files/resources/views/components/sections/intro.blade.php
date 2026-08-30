@@ -14,7 +14,10 @@
     <div class="prose mt-8 max-w-[58ch]" data-reveal>{!! $body !!}</div>
 
     @if ($availability != '')
-    <p class="mt-6 max-w-[56ch] text-base text-muted text-pretty sm:text-sm" data-reveal>{{ $availability }}</p>
+    <p class="mt-7 flex items-center gap-3 text-base text-muted text-pretty sm:text-sm" data-reveal>
+        <span class="now-marker size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
+        {{ $availability }}
+    </p>
     @endif
 
 </section>

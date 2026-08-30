@@ -9,10 +9,10 @@
      sentence to make sense of it, so each row gives the title its own line
      and hangs the description underneath — the same hairlines, a different
      shape, which is what stops the homepage reading as one long list. --}}
-<section class="py-14 sm:py-16">
+<section class="pb-14 sm:pb-16">
 
     @if ($heading != '')
-    <h2 class="display-section font-display font-medium text-ink" data-reveal>{{ $heading }}</h2>
+    <h2 class="display-section pt-14 font-display font-medium text-ink sm:pt-16" data-reveal>{{ $heading }}</h2>
     @endif
 
     <ul role="list" class="stagger mt-8 flex flex-col">
