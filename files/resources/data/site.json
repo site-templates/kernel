@@ -1,0 +1,22 @@
+{
+    "name": "Wren Halliday",
+    "nav_links": [
+        { "text": "Writing", "url": "/writing" },
+        { "text": "Projects", "url": "/projects" },
+        { "text": "About", "url": "/about" },
+        { "text": "Now", "url": "/now" }
+    ],
+    "elsewhere_links": [
+        { "text": "Email", "url": "mailto:hello@wrenhalliday.com" },
+        { "text": "GitHub", "url": "https://github.com" },
+        { "text": "Bluesky", "url": "https://bsky.app" },
+        { "text": "Read.cv", "url": "https://read.cv" },
+        { "text": "RSS", "url": "/feed.xml" }
+    ],
+    "footer_links": [
+        { "text": "Writing", "url": "/writing" },
+        { "text": "Projects", "url": "/projects" },
+        { "text": "About", "url": "/about" },
+        { "text": "Now", "url": "/now" }
+    ]
+}

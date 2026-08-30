@@ -1,0 +1,19 @@
+title: Opening statement
+description: The homepage's first screen — the statement, the paragraph and the availability line
+fields:
+    statement:
+        type: text
+        label: Statement
+        description: A short line — a role, not a pitch. It is the largest type on the site, so keep it under about 45 characters.
+        default: "Design engineer, tool maker & writer"
+    body:
+        type: textarea
+        rows: 6
+        label: Paragraph
+        description: Two or three sentences. HTML is allowed — links inside it are underlined and come alive on hover.
+        default: "Based in Bristol. I spend my days on developer tooling and my evenings on things that fit in a single file. This is where the finished thoughts go — everything else stays in a text file called <a href=\"/writing/three-years-of-keeping-a-work-journal\">journal.txt</a>."
+    availability:
+        type: text
+        label: Availability line
+        description: The quiet line under the paragraph. Leave it empty to hide the sentence.
+        default: "Currently at Foldwork, and not looking."

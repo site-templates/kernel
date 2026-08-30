@@ -1,0 +1,49 @@
+# The rows come from resources/data/collections/writings.json — the Content
+# editor is where posts are added, retitled and reordered. This section owns
+# the heading, the density and the link at the foot.
+title: Writing list
+description: The leader rows — title, hairline, date — over the writings collection
+fields:
+    heading:
+        type: text
+        label: Heading
+        description: Leave empty on a page whose own title already names the list.
+        default: "Writing"
+    showDescriptions:
+        type: toggle
+        label: Show a line under each title
+        description: On for an archive page, off for a short list on the homepage.
+        default: "0"
+    viewAllText:
+        type: text
+        label: Link at the foot
+        description: Leave empty to hide it — useful when this list is already the whole archive.
+        default: ""
+    viewAllHref:
+        type: url
+        label: Link at the foot goes to
+        default: "/writing"
+    writings:
+        type: repeater
+        label: Posts
+        add_button_label: "Add post"
+        item_label: title
+        source: writings
+        sub_fields:
+            title:
+                type: text
+                label: Title
+                default: "New post"
+            dateFormatted:
+                type: text
+                label: Date shown
+                default: "January 1"
+            description:
+                type: textarea
+                rows: 2
+                label: One-line summary
+                default: ""
+            link:
+                type: url
+                label: Link
+                default: "/writing/new-post"

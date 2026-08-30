@@ -1,0 +1,26 @@
+# The rows come from resources/data/collections/background.json, so the
+# Content editor is where they are added, rewritten and reordered.
+title: Background
+description: Term and detail pairs separated by hairlines
+fields:
+    heading:
+        type: text
+        label: Heading
+        description: Leave empty for an unlabelled list.
+        default: ""
+    background:
+        type: repeater
+        label: Pairs
+        add_button_label: "Add pair"
+        item_label: term
+        source: background
+        sub_fields:
+            term:
+                type: text
+                label: Term
+                default: "Now"
+            detail:
+                type: textarea
+                rows: 2
+                label: Detail
+                default: "What you are doing at the moment."

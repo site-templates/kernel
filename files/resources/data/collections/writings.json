@@ -1,0 +1,80 @@
+[
+    {
+        "title": "The smallest thing that could work",
+        "slug": "the-smallest-thing-that-could-work",
+        "link": "/writing/the-smallest-thing-that-could-work",
+        "description": "A rule I stole from a colleague and have not managed to improve on since.",
+        "date": "2026-07-22",
+        "dateFormatted": "July 22",
+        "year": "2026",
+        "readTime": "4 min",
+        "content": "<p>A colleague of mine used to open every planning conversation with the same question, and it drove me slightly mad for about a year before I understood it. She would let everyone finish laying out the plan, wait a beat, and then ask: <em>what is the smallest thing that could work?</em></p>\n<p>Not the smallest thing we could ship. Not an MVP. The smallest thing that would actually solve the problem for a real person, even if it embarrassed us.</p>\n<h2>Why it lands harder than it reads</h2>\n<p>Most plans are not too ambitious. They are too <strong>wide</strong>. Somebody names a real problem, and then five people attach their own adjacent concerns to it, and by the time it reaches a document it has become a platform. The question does not attack ambition. It attacks width.</p>\n<p>The honest answer is usually uncomfortable, and it is usually a form. A form and an email. A spreadsheet somebody updates by hand on Fridays. I have watched a team spend two quarters on a scheduling service whose first honest answer was a shared calendar, and the shared calendar would have told us within a fortnight that the real problem was nobody trusted the data.</p>\n<h2>The version I actually use</h2>\n<p>I have added one clause. After the smallest thing, I ask what we would have to learn for the small thing to be wrong. If nobody can name it, we do not have a hypothesis — we have a preference, and preferences do not need two quarters.</p>\n<blockquote><p>Small is not a budget. It is a way of finding out sooner.</p></blockquote>\n<p>The thing nobody warns you about is that this gets harder as you get more senior, not easier. A small answer from a junior engineer reads as pragmatism. The same answer from someone with a title reads as a lack of vision, and you will feel the pull to say something larger. Say the small thing anyway.</p>",
+        "dateline": "July 22, 2026 · 4 min read",
+        "meta": "July 22"
+    },
+    {
+        "title": "Notes on reading code you didn't write",
+        "slug": "notes-on-reading-code-you-didnt-write",
+        "link": "/writing/notes-on-reading-code-you-didnt-write",
+        "description": "Four habits that turned an unfamiliar codebase from a wall into a map.",
+        "date": "2026-06-04",
+        "dateFormatted": "June 4",
+        "year": "2026",
+        "readTime": "6 min",
+        "content": "<p>I have joined seven codebases in ten years and I was bad at it for the first four. What I did was read. I would open the entry point, follow the imports, and try to hold the whole shape in my head at once, which works up to roughly the size of a weekend project and not one line further.</p>\n<h2>Start at the edges, not the middle</h2>\n<p>The centre of a system is where the abstractions live, and abstractions are the last thing that makes sense to a newcomer. The edges — the HTTP handlers, the CLI commands, the cron entries, the migration files — are concrete. They tell you what the system is <em>asked</em> to do, which is a far better first question than how it does it.</p>\n<h2>Change something on day one</h2>\n<p>Reading gives you a plausible model. Changing something gives you a tested one. On my last team I made it a rule to land a one-line fix before I read a single design document, and the fix was never the point — the point was discovering that the test suite took eleven minutes, that two of the three config files were dead, and that the deploy needed a password nobody had written down.</p>\n<h2>Write the map down as you go</h2>\n<p>Not a document for other people. A scratch file, badly spelled, full of arrows. Mine usually looks like this:</p>\n<pre><code>request -&gt; Router -&gt; ??? -&gt; BillingSync (why here?)\nBillingSync writes to `invoices` AND `ledger_entries`\nwho reads ledger_entries? -&gt; only the nightly job. dead?</code></pre>\n<p>Half of those question marks answer themselves within a week. The other half turn out to be the interesting part of the codebase, and by then you have earned the standing to ask about them.</p>\n<h2>Find out who to ask, then ask early</h2>\n<p>Every codebase has one or two people who hold its unwritten history. Finding them is worth more than any onboarding document, and the cost of asking them a slightly stupid question in week one is roughly zero. In week six it is not zero, which is precisely why people stop asking around week six and stay confused for a year.</p>",
+        "dateline": "June 4, 2026 · 6 min read",
+        "meta": "June 4"
+    },
+    {
+        "title": "I stopped measuring my mornings",
+        "slug": "i-stopped-measuring-my-mornings",
+        "link": "/writing/i-stopped-measuring-my-mornings",
+        "description": "Three years of tracked wake times, and what was actually in the data.",
+        "date": "2026-04-18",
+        "dateFormatted": "April 18",
+        "year": "2026",
+        "readTime": "5 min",
+        "content": "<p>For about three years I recorded when I woke up, how long I had slept, whether I had gone outside before nine, and how the first two hours of work had gone on a scale I made up. That is roughly a thousand rows, which felt like it ought to be enough to find something.</p>\n<p>It was enough to find something. What I found was that the thing I had been optimising had almost no relationship to the thing I cared about.</p>\n<h2>What the data said</h2>\n<p>Wake time explained essentially nothing. A 6:10 start and an 8:20 start produced the same distribution of good mornings. Sleep duration mattered a little, and only below about six and a half hours, where everything got worse at once and stayed worse.</p>\n<p>The variable that actually moved the number was whether I had decided the night before what I was going to work on. Mornings where the first decision was already made were good almost regardless of how they started. Mornings that began with <em>so what am I doing today</em> were mediocre almost regardless of how well I had slept.</p>\n<h2>Which is annoying, because it is not a routine</h2>\n<p>Routines are satisfying to build. You can buy things for a routine. You can tell people about a routine. \"Write down tomorrow's first task before you close the laptop\" is not a routine — it is a sentence, and it takes eleven seconds, and it does more than the alarm clock ever did.</p>\n<p>I stopped logging in March. I do not miss it. The one habit that survived the spreadsheet is the eleven-second one, which is, I suspect, the general shape of how this goes for most people who try it.</p>",
+        "dateline": "April 18, 2026 · 5 min read",
+        "meta": "April 18"
+    },
+    {
+        "title": "What a good design review sounds like",
+        "slug": "what-a-good-design-review-sounds-like",
+        "link": "/writing/what-a-good-design-review-sounds-like",
+        "description": "The phrases that separate a review that improves the work from one that just ranks it.",
+        "date": "2026-02-27",
+        "dateFormatted": "February 27",
+        "year": "2026",
+        "readTime": "5 min",
+        "content": "<p>I have sat in a lot of design reviews that ended with everyone agreeing and nothing changing. The tell is almost always in the language. A review that improves work sounds different from a review that ranks it, and you can hear which one you are in within about four minutes.</p>\n<h2>The phrases that help</h2>\n<p>\"What is this screen for?\" — asked genuinely, not rhetorically. Half the problems in a review dissolve the moment somebody says the job out loud and the room realises two people had different jobs in mind.</p>\n<p>\"Show me the state where it goes wrong.\" Every design looks good with three well-behaved rows in it. The empty state, the error, the row with a forty-word name, the account with nine hundred entries — that is where the design either holds or falls over, and it is where nobody wants to spend the meeting.</p>\n<p>\"What did you try that did not work?\" This one changes the temperature of a room more than any other. It moves the presenter from defending an outcome to narrating a process, and it stops the reviewers from suggesting the three things that were already tried and discarded last Tuesday.</p>\n<h2>The phrases that do not</h2>\n<p>\"I would have done it differently\" is not feedback, it is a fact about you. \"It feels off\" is a real signal and a useless one — the work is to spend the next thirty seconds finding out what is off, out loud, in front of everyone, even if you get it wrong.</p>\n<blockquote><p>A reviewer's job is not to have the taste. It is to make the taste in the room legible to the person holding the file.</p></blockquote>\n<p>And the last one, which took me too long: someone has to say what happens next. Not \"great, thanks\" — an actual sentence about which of the fifteen things said in the last hour the designer should act on. Without it, every review is advisory, and advisory reviews are the reason people stop bringing work in early.</p>",
+        "dateline": "February 27, 2026 · 5 min read",
+        "meta": "February 27"
+    },
+    {
+        "title": "Against the second monitor",
+        "slug": "against-the-second-monitor",
+        "link": "/writing/against-the-second-monitor",
+        "description": "A small, petty, entirely subjective argument for one screen.",
+        "date": "2025-11-09",
+        "dateFormatted": "November 9",
+        "year": "2025",
+        "readTime": "3 min",
+        "content": "<p>I gave away my second monitor in the spring and I have been quietly insufferable about it ever since. This is the argument, offered without any claim that it generalises.</p>\n<p>The pitch for two screens is that you can see more at once. That is true and it is exactly the problem. What I could see at once was my editor and everything that wanted my attention instead of my editor, arranged side by side, permanently, with no friction between them at all.</p>\n<h2>What actually changed</h2>\n<p>Switching to a single screen turned every context switch into a deliberate act. Not a large one — a keystroke — but a keystroke I notice, which turns out to be the entire mechanism. I do not think I focus better. I think I <em>notice</em> when I stop focusing, and noticing is most of the work.</p>\n<p>The second thing is that I stopped arranging windows. I had not realised how much time went into the arrangement itself: the daily reconstruction of a layout, the dragging of a terminal to the right place, the small satisfaction of a tidy desktop that produced nothing.</p>\n<h2>The honest caveats</h2>\n<p>If you compare two documents for a living, ignore all of this. If you run a debugger against a live UI, ignore it twice. And I did keep the big screen — this is not an argument for a small workspace, only against a divided one.</p>",
+        "dateline": "November 9, 2025 · 3 min read",
+        "meta": "November 9"
+    },
+    {
+        "title": "Three years of keeping a work journal",
+        "slug": "three-years-of-keeping-a-work-journal",
+        "link": "/writing/three-years-of-keeping-a-work-journal",
+        "description": "One file, one line a day, and the two moments it has quietly saved me.",
+        "date": "2025-09-15",
+        "dateFormatted": "September 15",
+        "year": "2025",
+        "readTime": "4 min",
+        "content": "<p>It is one plain text file. Every working day, one line, written at the end of the day rather than the start: what I did, and one thing I learned or got wrong. No formatting, no tags, no tool. It is nine hundred lines long now and I have never once regretted the two minutes.</p>\n<h2>The first thing it is good for</h2>\n<p>Performance conversations. Not in a careerist way — in the sense that I used to walk into them genuinely unable to remember March. Six months is longer than my memory for my own work, and the file remembers on my behalf. The first time I brought it, the conversation changed from a negotiation about impressions into a conversation about facts, and it has stayed that way since.</p>\n<h2>The second thing, which I did not expect</h2>\n<p>It is a very good detector of stuck. When I read back a week and every line is a variation on the same sentence, that is not a memory problem, that is a signal. Three lines in a row about the same flaky test means the test is not the problem — something structural is, and I have been treating a symptom for three days without noticing.</p>\n<h2>How to actually keep it</h2>\n<p>The only rule that has mattered: write it before you close the laptop, not the next morning. Morning-me writes what he thinks happened. Evening-me writes what happened. They are not the same file, and only one of them is worth reading in six months.</p>\n<p>Skip days freely. A gap is information too.</p>",
+        "dateline": "September 15, 2025 · 4 min read",
+        "meta": "September 15"
+    }
+]

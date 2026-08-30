@@ -1,0 +1,52 @@
+# The rows come from resources/data/collections/projects.json — the Content
+# editor is where projects are added, rewritten and reordered. This section
+# owns the heading, the metadata line and the link at the foot.
+title: Project list
+description: Title, hairline and year over the projects collection, with a sentence under each
+fields:
+    heading:
+        type: text
+        label: Heading
+        description: Leave empty on a page whose own title already names the list.
+        default: "Projects"
+    showStatus:
+        type: toggle
+        label: Show the year and status
+        default: "1"
+    viewAllText:
+        type: text
+        label: Link at the foot
+        description: Leave empty to hide it.
+        default: ""
+    viewAllHref:
+        type: url
+        label: Link at the foot goes to
+        default: "/projects"
+    projects:
+        type: repeater
+        label: Projects
+        add_button_label: "Add project"
+        item_label: title
+        source: projects
+        sub_fields:
+            title:
+                type: text
+                label: Name
+                default: "New project"
+            description:
+                type: textarea
+                rows: 2
+                label: One-line summary
+                default: "What it is, in one sentence."
+            year:
+                type: text
+                label: Year
+                default: "2026"
+            status:
+                type: text
+                label: Status
+                default: "Maintained"
+            link:
+                type: url
+                label: Link
+                default: "/projects/new-project"

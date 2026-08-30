@@ -1,0 +1,35 @@
+# The visual editor's contract for nav.blade.php.
+# The links come from resources/data/site.json (nav_links), so editing them
+# here changes the header on every page at once.
+title: Header
+description: The avatar and the four places you can go
+fields:
+    avatar:
+        type: image
+        label: Avatar
+        description: Doubles as the site's mark. Swap the favicon to match.
+        default: "/images/avatar.jpg"
+    avatarAlt:
+        type: text
+        label: Avatar alt text
+        default: "Wren Halliday"
+    current:
+        type: text
+        label: Current page path
+        description: Set by each page — the matching link is underlined.
+        default: "/"
+    links:
+        type: repeater
+        label: Header links
+        add_button_label: "Add link"
+        item_label: text
+        source: site.nav_links
+        sub_fields:
+            text:
+                type: text
+                label: Label
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"

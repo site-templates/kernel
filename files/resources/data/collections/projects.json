@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Ledger",
+        "slug": "ledger",
+        "link": "/projects/ledger",
+        "description": "A plain-text expense tracker that fits in a single file.",
+        "year": "2026",
+        "role": "Design and build",
+        "stack": "Go, SQLite",
+        "status": "Maintained",
+        "content": "<p>Ledger started because I wanted to know where my money went and every app that could tell me also wanted my bank credentials. It is a single binary that reads a plain text file, one transaction per line, and answers questions about it.</p>\n<pre><code>2026-07-14  groceries   -42.80  co-op\n2026-07-15  salary     3200.00  acme\n2026-07-16  coffee       -3.40  the kiosk</code></pre>\n<h2>The design constraint</h2>\n<p>Everything had to survive the program being deleted. The file is the database; the binary is a lens over it. That single decision removed migrations, backups, export, account deletion and roughly ninety percent of the surface area a normal finance app carries — and it meant the first working version took a weekend rather than a season.</p>\n<h2>What I would change</h2>\n<p>The query language grew organically and it shows. If I started again I would take SQL seriously from the first day instead of inventing four filters and then a fifth, and I would not have made the reporting subcommand print colour by default — a year of bug reports came from that one line.</p>",
+        "dateline": "2026 · Maintained",
+        "meta": "2026"
+    },
+    {
+        "title": "Quiet Hours",
+        "slug": "quiet-hours",
+        "link": "/projects/quiet-hours",
+        "description": "A focus timer with no streaks, no badges, and no history.",
+        "year": "2025",
+        "role": "Design and build",
+        "stack": "Swift, SwiftUI",
+        "status": "Maintained",
+        "content": "<p>Quiet Hours is a timer. You choose a length, you name the thing you are about to do, and it counts down. When it finishes it says so once and then it forgets everything.</p>\n<h2>The forgetting is the feature</h2>\n<p>Every focus app I had used eventually became a second job: a record to maintain, a streak to protect, a chart that made a bad week feel like a bad person. The moment the tool starts keeping score, the score becomes the thing you are optimising, and I did not want to optimise the score.</p>\n<p>So there is no history. There is no export. There is no account. If you want to know how many hours you worked this week, you will have to remember, which is roughly the accuracy the question deserves.</p>\n<h2>What surprised me</h2>\n<p>The most requested feature, by a wide margin, is history. I have not built it and I do not intend to, and about a third of the people who ask write back a month later to say they understand. The other two thirds use something else, which is the correct outcome for both of us.</p>",
+        "dateline": "2025 · Maintained",
+        "meta": "2025"
+    },
+    {
+        "title": "Fieldnotes",
+        "slug": "fieldnotes",
+        "link": "/projects/fieldnotes",
+        "description": "Capture a thought in under two seconds, sort it out later.",
+        "year": "2025",
+        "role": "Design, build, and support",
+        "stack": "Swift, CloudKit",
+        "status": "Maintained",
+        "content": "<p>Fieldnotes exists because I kept losing thoughts in the gap between having them and finding somewhere to put them. It opens straight into a cursor. There is no folder to choose, no title to write, no tag to pick. You type, you close it, and it is saved.</p>\n<h2>Two seconds is a real constraint</h2>\n<p>I measured it. From locked phone to blinking cursor had to be under two seconds on the oldest device I could still buy, because past about that point I would have already decided the thought was not worth the trouble — and the thoughts you do not bother writing down are, in my experience, the ones you most wanted back.</p>\n<p>Hitting it meant giving up the launch animation, the sync-on-open, and the onboarding screen. It meant the note list loads <em>after</em> the editor rather than before it. None of those were obvious decisions in a design review and all of them were obvious with a stopwatch.</p>\n<h2>Sorting comes later</h2>\n<p>Everything lands in one undifferentiated pile, and there is a five-minute review screen that shows the pile one card at a time: keep, file, or bin. Doing the organising as a separate deliberate act rather than at the moment of capture is the whole idea, and it is the part people tell me they were not expecting to like.</p>",
+        "dateline": "2025 · Maintained",
+        "meta": "2025"
+    },
+    {
+        "title": "Kerning Club",
+        "slug": "kerning-club",
+        "link": "/projects/kerning-club",
+        "description": "A small browser game for training your eye on letter spacing.",
+        "year": "2024",
+        "role": "Design and build",
+        "stack": "TypeScript, Canvas",
+        "status": "Archived",
+        "content": "<p>Kerning Club shows you a word with one letter knocked out of position and asks you to put it back. It scores you on how close you got, in thousandths of an em, and then it shows you the designer's original spacing over the top of yours.</p>\n<h2>Built in a week, played for a year</h2>\n<p>It was a weekend experiment that got picked up by a type foundry's newsletter and did about four hundred thousand rounds over the following year. I learned more about performance from that week than from any project I have been paid for — the first version repainted the entire canvas on every pointer move, which is fine on a laptop and unusable on a phone.</p>\n<h2>Archived, deliberately</h2>\n<p>The fonts it shipped with were licensed for a demo, not for a service, and renewing that properly would have meant turning a toy into a business. It is frozen, it still runs, and I have left the source up for anyone who wants to do it properly with fonts they own.</p>",
+        "dateline": "2024 · Archived",
+        "meta": "2024"
+    },
+    {
+        "title": "Halfmoon",
+        "slug": "halfmoon",
+        "link": "/projects/halfmoon",
+        "description": "The static site generator that runs this site, in about 600 lines.",
+        "year": "2024",
+        "role": "Design and build",
+        "stack": "Go, Markdown",
+        "status": "Maintained",
+        "content": "<p>Halfmoon turns a folder of markdown into a folder of HTML. That is the whole description. It has no plugin system, no themes, no configuration file beyond a dozen lines, and no way to extend it other than editing it.</p>\n<h2>Why write another one</h2>\n<p>I did not want a better generator. I wanted one I could hold entirely in my head, because every time a build broke on a tool I did not understand, the site went unwritten for a fortnight while I worked out why. Six hundred lines is small enough that the answer is always findable in an afternoon.</p>\n<h2>The one clever part</h2>\n<p>Templates are Go templates with exactly one addition: a <code>related</code> function that takes a post and returns others sharing a tag, sorted by how many they share. It is nine lines and it is the only thing in the codebase I would call a feature rather than a mechanism. Everything else is a loop over files.</p>\n<h2>Should you use it</h2>\n<p>Almost certainly not. Use something maintained by more than one person. Write your own if you want the same thing I wanted, which was not a better tool but a legible one.</p>",
+        "dateline": "2024 · Maintained",
+        "meta": "2024"
+    }
+]

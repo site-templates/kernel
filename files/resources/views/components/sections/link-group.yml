@@ -1,0 +1,31 @@
+# The links come from resources/data/site.json (elsewhere_links), so the
+# same set can appear on more than one page without being kept in step by
+# hand.
+title: Link group
+description: A short column of underlined links under a heading
+fields:
+    heading:
+        type: text
+        label: Heading
+        default: "Elsewhere"
+    note:
+        type: textarea
+        rows: 2
+        label: Line underneath
+        description: Leave empty to hide it.
+        default: ""
+    links:
+        type: repeater
+        label: Links
+        add_button_label: "Add link"
+        item_label: text
+        source: site.elsewhere_links
+        sub_fields:
+            text:
+                type: text
+                label: Label
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "https://example.com"

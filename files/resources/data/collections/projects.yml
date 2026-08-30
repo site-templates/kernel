@@ -1,0 +1,15 @@
+# Column types for projects.json — the source of truth the builder reads:
+# richtext columns open in the rich editor (the Content drawer and any
+# section repeater listing this collection).
+fields:
+    title: { type: text }
+    slug: { type: text }
+    link: { type: url }
+    description: { type: textarea }
+    year: { type: text }
+    role: { type: text }
+    stack: { type: text }
+    status: { type: text }
+    dateline: { type: text }
+    meta: { type: text }
+    content: { type: richtext }

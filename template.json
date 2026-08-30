@@ -1,0 +1,20 @@
+{
+    "name": "Kernel",
+    "dialect": "blade",
+    "description": "A personal site reduced to its index — one narrow column of warm paper where every piece of writing and every project is a row of type, a hairline leader, and a date.",
+    "icon": "◦",
+    "repo": "https://github.com/site-templates/kernel",
+    "order": 34,
+    "category": "blog",
+    "theme": "light",
+    "accent": "#176b47",
+    "pages": [
+        "Home",
+        "Writing",
+        "Post",
+        "Projects",
+        "Project",
+        "About",
+        "Now"
+    ]
+}

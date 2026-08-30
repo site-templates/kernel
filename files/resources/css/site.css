@@ -1,0 +1,372 @@
+/*
+    Kernel — the whole design system in one file.
+
+    Inlined right after Tailwind by @vite in the layout, so everything here
+    reaches every page. The @theme block below is the ONLY place a real
+    colour or font value appears in this template: the tokens become real
+    Tailwind utilities (bg-canvas, text-ink, text-muted, border-line,
+    text-accent, font-display) and the markup never writes a hex again.
+    Retune the palette here and the whole site moves with it.
+*/
+
+@theme {
+    /*
+        One paper stock and one recessed plane. Canvas leans grey rather
+        than cream — the site is a printed index, not a keepsake — and
+        surface is the only fill in the design, reserved for the colophon
+        and the now-panel.
+    */
+    --color-canvas: #f7f6f3;
+    --color-surface: #edebe5;
+
+    /* Two tiers of type. Muted clears AA on canvas and on surface alike. */
+    --color-ink: #16150f;
+    --color-muted: #6b6760;
+
+    /* The single hairline weight in the design. Everything separates with this. */
+    --color-line: #dfdcd3;
+
+    /*
+        The green. It is dark enough to carry body text, which is the point:
+        it never needs a fill behind it. Allowed three places per page — the
+        leader rule that wipes in on hover, a link's underline on hover, and
+        the marker on the Now page. Nowhere else, ever.
+    */
+    --color-accent: #176b47;
+    --color-accent-ink: #f4f7f4;
+
+    /*
+        Spectral sets every heading and every word of a post; Schibsted
+        Grotesk carries the body, the navigation, the dates and the labels.
+        A low-contrast reading serif against a working grotesque — the
+        contents page of a book, not a magazine cover.
+    */
+    --font-display: "Spectral", ui-serif, Georgia, "Times New Roman", serif;
+    --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+    /* One easing for everything that moves: fast out of the gate, long settle. */
+    --ease-draw: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+    The display scale. Fluid between the phone and the desktop so nothing
+    needs a breakpoint, and never taller than it needs to be — this site
+    argues with space, not with size.
+*/
+.display-hero {
+    font-size: clamp(2.125rem, 4.6vw, 3.125rem);
+    line-height: 1.1;
+    letter-spacing: -0.019em;
+}
+
+.display-page {
+    font-size: clamp(1.875rem, 3.4vw, 2.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.019em;
+}
+
+.display-section {
+    font-size: 1.375rem;
+    line-height: 1.25;
+    letter-spacing: -0.014em;
+}
+
+/*
+    THE LEADER ROW — the one idea this template is known for.
+
+    A title, a hairline that grows to fill whatever space is left, and a
+    date. It is the row of a book's contents page, and it is the only list
+    shape in the design: writing, projects and the year groups all use it.
+
+    At rest the leader is a hairline. On hover an accent rule is drawn
+    across it from the left, and the type steps from muted up to ink. The
+    colour change is instant and the drawing is what animates, so the row
+    feels crisp rather than laggy.
+*/
+.leader {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: --spacing(6);
+    /* An empty box aligned on the baseline sits its bottom edge there, so
+       the margin lifts the rule to where a printed leader actually runs. */
+    align-self: baseline;
+    margin-bottom: 0.3rem;
+    border-top: 1px solid var(--color-line);
+}
+
+.leader::after {
+    content: "";
+    position: absolute;
+    inset: -1px 0 auto 0;
+    border-top: 1px solid var(--color-accent);
+    transform-origin: left;
+    scale: 0 1;
+    transition: scale 0.42s var(--ease-draw);
+}
+
+.entry:hover .leader::after,
+.entry:focus-visible .leader::after {
+    scale: 1 1;
+}
+
+/*
+    THE RULE THAT COMES ALIVE, part two.
+
+    Every inline and grouped link in the design carries a muted underline
+    that switches to accent and drops away from the baseline on hover. Same
+    idea as the leader, at the scale of a single word, so the whole site
+    reads as one gesture.
+*/
+@utility ruled-link {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-underline-offset 0.2s var(--ease-draw);
+
+    @variant hover {
+        text-decoration-color: var(--color-accent);
+        text-underline-offset: 0.3em;
+    }
+
+    @variant focus-visible {
+        text-decoration-color: var(--color-accent);
+    }
+}
+
+/*
+    The one place the accent becomes a shape rather than a line: the small
+    disc that dates the Now page. Two rings so it reads at any size.
+*/
+.now-marker {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent) 16%, transparent);
+}
+
+/*
+    Scroll reveals. IntersectionObserver flips .is-visible as each
+    [data-reveal] element arrives (see public/js/main.js). Everything is
+    gated behind the .js class the layout sets before first paint, so with
+    JavaScript switched off nothing is ever hidden. Stagger a list by
+    setting --reveal-delay.
+*/
+.js [data-reveal] {
+    opacity: 0;
+    translate: 0 10px;
+    transition:
+        opacity 0.6s var(--ease-draw),
+        translate 0.6s var(--ease-draw);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal].is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+/*
+    Put .stagger on any list and its rows arrive in sequence rather than
+    together. Position does the work, so nothing is computed per item.
+*/
+.stagger > *:nth-child(2) {
+    --reveal-delay: 50ms;
+}
+
+.stagger > *:nth-child(3) {
+    --reveal-delay: 100ms;
+}
+
+.stagger > *:nth-child(4) {
+    --reveal-delay: 150ms;
+}
+
+.stagger > *:nth-child(5) {
+    --reveal-delay: 200ms;
+}
+
+.stagger > *:nth-child(6) {
+    --reveal-delay: 250ms;
+}
+
+/*
+    Post and project bodies arrive as raw HTML from the collections, so they
+    cannot carry utility classes. This is the whole prose contract — every
+    element the editor can produce is styled here. The measure is set in the
+    markup (max-w-[64ch]) rather than in this file.
+
+    A body is set in the display serif, not the grotesque: the sans is for
+    finding things and the serif is for reading them, and this is the only
+    surface on the site that exists to be read rather than scanned. Spectral
+    runs small for its point size, so the body sits a step above the rest of
+    the site at 1.125rem.
+*/
+.prose {
+    font-family: var(--font-display);
+}
+
+.prose > * + * {
+    margin-top: --spacing(6);
+}
+
+.prose p {
+    font-size: var(--text-lg);
+    line-height: --spacing(8);
+    color: var(--color-ink);
+    text-wrap: pretty;
+}
+
+.prose h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    line-height: 1.25;
+    letter-spacing: -0.016em;
+    font-weight: 600;
+    color: var(--color-ink);
+    /* More space above a heading than below it, always. */
+    margin-top: --spacing(14);
+}
+
+.prose h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: --spacing(12);
+}
+
+.prose a {
+    color: var(--color-ink);
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-underline-offset 0.2s var(--ease-draw);
+}
+
+@variant hover {
+    .prose a:hover {
+        text-decoration-color: var(--color-accent);
+        text-underline-offset: 0.3em;
+    }
+}
+
+/*
+    A prose link arrives as raw HTML from a collection, so it cannot carry a
+    focus utility the way the rest of the site's links do. Its keyboard ring
+    has to live here or it has none at all.
+*/
+.prose a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+}
+
+.prose ul,
+.prose ol {
+    padding-left: --spacing(5);
+    color: var(--color-ink);
+}
+
+.prose ul {
+    list-style-type: disc;
+}
+
+.prose ol {
+    list-style-type: decimal;
+}
+
+.prose li {
+    font-size: var(--text-lg);
+    line-height: --spacing(8);
+    margin-top: --spacing(2);
+}
+
+.prose li::marker {
+    color: var(--color-line);
+}
+
+.prose blockquote {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--color-ink);
+    padding-left: --spacing(5);
+    border-left: 1px solid var(--color-accent);
+}
+
+.prose blockquote p {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+}
+
+.prose strong {
+    font-weight: 600;
+}
+
+.prose em {
+    font-style: italic;
+}
+
+.prose img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.prose figcaption {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    margin-top: --spacing(3);
+}
+
+.prose code {
+    font-family: var(--font-sans);
+    font-size: 0.85em;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-xs);
+    padding-inline: --spacing(1);
+}
+
+.prose pre {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-sm);
+    padding: --spacing(4);
+    overflow-x: auto;
+    font-size: var(--text-sm);
+    line-height: --spacing(6);
+}
+
+.prose pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.prose hr {
+    border-color: var(--color-line);
+    margin-block: --spacing(10);
+}
+
+/*
+    Reduced motion resolves every reveal to its finished state — visible, in
+    place, untransitioned — and settles every rule in its drawn position so
+    no hover is left half-finished. Nothing may ever be stuck at opacity 0.
+*/
+@media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+        opacity: 1;
+        translate: 0 0;
+        transition: none;
+    }
+
+    .leader::after {
+        transition: none;
+    }
+
+    .prose a,
+    .ruled-link {
+        transition: none;
+    }
+}

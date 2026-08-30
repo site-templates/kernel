@@ -1,0 +1,13 @@
+title: Page title
+description: The heading and optional opening line at the top of an inner page
+fields:
+    heading:
+        type: text
+        label: Title
+        default: "Writing"
+    lede:
+        type: textarea
+        rows: 3
+        label: Opening line
+        description: One sentence. Leave empty to let the title stand on its own.
+        default: ""

@@ -1,0 +1,29 @@
+# The visual editor's contract for footer.blade.php.
+# The links come from resources/data/site.json (footer_links).
+title: Footer
+description: The closing hairline, the links and the colophon line
+fields:
+    note:
+        type: textarea
+        rows: 2
+        label: Colophon line
+        default: "Set in Spectral and Schibsted Grotesk."
+    copyright:
+        type: text
+        label: Copyright
+        default: "© 2026 Wren Halliday"
+    links:
+        type: repeater
+        label: Footer links
+        add_button_label: "Add link"
+        item_label: text
+        source: site.footer_links
+        sub_fields:
+            text:
+                type: text
+                label: Label
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"

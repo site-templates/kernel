@@ -1,0 +1,22 @@
+# The visual editor's contract for layouts/main.blade.php — the shell every
+# page is wrapped in. The <head> lives here, so these fields set the browser
+# tab and the link preview for whichever page is open.
+title: Page shell
+description: The document head, the column, the header and the footer
+fields:
+    title:
+        type: text
+        label: Page title
+        description: Shown in the browser tab, after the site name.
+        default: "Home"
+    description:
+        type: textarea
+        rows: 3
+        label: Page description
+        description: Used for search results and link previews.
+        default: ""
+    current:
+        type: text
+        label: Current page path
+        description: Set by each page — the matching header link is marked as current.
+        default: "/"

@@ -1,0 +1,23 @@
+# The rows are bound to the whole collection by the page this sits on; the
+# entry currently being read is filtered out by its slug.
+title: More entries
+description: The leader rows at the foot of a post or project, minus the one you are reading
+fields:
+    heading:
+        type: text
+        label: Heading
+        default: "More writing"
+    current:
+        type: text
+        label: Slug to leave out
+        description: Set by the page — the entry being read.
+        default: ""
+    allText:
+        type: text
+        label: Link at the foot
+        description: Leave empty to hide it.
+        default: ""
+    allHref:
+        type: url
+        label: Link at the foot goes to
+        default: "/writing"

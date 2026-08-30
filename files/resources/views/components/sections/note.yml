@@ -1,0 +1,12 @@
+title: Dated note
+description: The recessed panel that stamps a page with the day it was last true
+fields:
+    stamp:
+        type: text
+        label: Stamp
+        default: "Updated 22 July 2026"
+    body:
+        type: textarea
+        rows: 3
+        label: Note
+        default: "A now page is a snapshot, not a CV. This one is accurate on the day it says it is, and almost certainly out of date by the time you read it."

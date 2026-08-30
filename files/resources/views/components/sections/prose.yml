@@ -1,0 +1,9 @@
+title: Text block
+description: A block of long-form writing with headings, links and lists
+fields:
+    body:
+        type: textarea
+        rows: 14
+        label: Text
+        description: HTML — paragraphs, h2, h3, links, lists, quotes and code all have styles.
+        default: "<p>Write here.</p>"

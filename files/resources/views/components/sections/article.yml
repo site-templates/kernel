@@ -1,0 +1,20 @@
+# On a post or project page these fields are bound to the matched entry, so
+# editing the entry in the Content editor is what changes the page.
+title: Article
+description: The reading page — title, dateline and body
+fields:
+    heading:
+        type: text
+        label: Title
+        default: "A post"
+    dateline:
+        type: text
+        label: Dateline
+        description: The date and reading time under the title. Leave empty to hide it.
+        default: ""
+    body:
+        type: textarea
+        rows: 14
+        label: Body
+        description: On a post or project page this is bound to the entry, so edit it in the Content drawer where it opens in the rich editor.
+        default: "<p>Write here.</p>"

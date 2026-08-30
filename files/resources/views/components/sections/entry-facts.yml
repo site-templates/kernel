@@ -1,0 +1,38 @@
+# On a project page each value is bound to the matched entry, so the Content
+# editor is where they change. The labels are set here.
+title: Project facts
+description: Role, year, stack and status as term and detail pairs
+fields:
+    roleLabel:
+        type: text
+        label: Label for role
+        default: "Role"
+    role:
+        type: text
+        label: Role
+        description: Leave empty to drop the row.
+        default: ""
+    yearLabel:
+        type: text
+        label: Label for year
+        default: "Year"
+    year:
+        type: text
+        label: Year
+        default: ""
+    stackLabel:
+        type: text
+        label: Label for stack
+        default: "Built with"
+    stack:
+        type: text
+        label: Built with
+        default: ""
+    statusLabel:
+        type: text
+        label: Label for status
+        default: "Status"
+    status:
+        type: text
+        label: Status
+        default: ""

@@ -1,0 +1,5 @@
+# Column types for background.json — the term and detail pairs on the About
+# page. The Content editor is where these are added and reordered.
+fields:
+    term: { type: text }
+    detail: { type: textarea }
