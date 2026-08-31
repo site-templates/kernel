@@ -14,7 +14,7 @@
     <ul role="list" class="stagger mt-6 flex flex-col gap-2.5">
         @foreach ($links as $link)
         <li class="text-base" data-reveal>
-            <a href="{{ $link->url }}" class="ruled-link text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">{{ $link->text }}</a>
+            <a href="{{ $link->url }}" target="_blank" rel="noopener" class="ruled-link text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">{{ $link->text }}</a>
         </li>
         @endforeach
     </ul>
