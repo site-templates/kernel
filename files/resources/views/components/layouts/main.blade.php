@@ -27,7 +27,7 @@
     <script>document.documentElement.classList.add('js')</script>
     <script src="/js/main.js" defer></script>
 </head>
-<body class="min-h-dvh bg-canvas font-sans text-ink antialiased">
+<body class="min-h-dvh bg-canvas font-sans text-ink antialiased" data-instant-navigation>
 <!--
     THESIS: a person's site as their own index, not a landing page with a
     blog bolted on. It refuses the portfolio grid of cards: everything here
